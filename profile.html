@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Life Navigator - Smart Profile</title>
+<link rel="stylesheet" href="profile.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="bg-animation">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="profile-wrapper">
+
+    <div class="profile-card">
+
+        <h2>Create Your Smart Citizen Profile</h2>
+        <p>AI will personalize government services for you</p>
+
+        <form id="profileForm">
+
+            <div class="input-group">
+                <input type="text" id="name" required>
+                <label>Full Name</label>
+            </div>
+
+            <div class="input-group">
+                <input type="number" id="age" required>
+                <label>Age</label>
+            </div>
+
+            <div class="input-group">
+                <input type="number" id="income" required>
+                <label>Annual Income (₹)</label>
+            </div>
+
+            <div class="input-group">
+                <select id="occupation" required>
+                    <option value=""></option>
+                    <option value="student">Student</option>
+                    <option value="farmer">Farmer</option>
+                    <option value="employed">Employed</option>
+                    <option value="unemployed">Unemployed</option>
+                </select>
+                <label>Occupation</label>
+            </div>
+
+            <div class="input-group">
+                <select id="location" required>
+                    <option value=""></option>
+                    <option value="rural">Rural</option>
+                    <option value="urban">Urban</option>
+                </select>
+                <label>Location</label>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Generate AI Suggestions
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="profile.js"></script>
+</body>
+</html>

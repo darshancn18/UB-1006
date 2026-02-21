@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Life Navigator Dashboard</title>
+<link rel="stylesheet" href="dashboard.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+   (function(){
+      emailjs.init("YOUR_PUBLIC_KEY");
+   })();
+</script>
+
+</head>
+<body>
+
+<header class="navbar">
+    <h2>🇮🇳 AI Life Navigator</h2>
+
+    <div class="nav-right">
+        <div class="notification-bell" onclick="toggleNotifications()">
+            🔔 <span id="notificationCount">0</span>
+        </div>
+        <button onclick="logout()">Logout</button>
+    </div>
+</header>
+
+<!-- Notification Panel -->
+<div class="notification-panel" id="notificationPanel">
+    <h3>Notifications</h3>
+    <div id="notificationList"></div>
+</div>
+
+
+
+<!-- Welcome Section -->
+<section class="welcome">
+    <h1 id="welcomeText"></h1>
+    <p>Your personalized government service dashboard</p>
+</section>
+
+<!-- Stats Section -->
+<section class="stats">
+    <div class="stat-card">
+        <h3 id="totalSchemes">0</h3>
+        <p>Eligible Schemes</p>
+    </div>
+    <div class="stat-card">
+        <h3>Active</h3>
+        <p>Status: AI Ready</p>
+    </div>
+</section>
+<!-- Document Expiry Reminder Section -->
+<section class="document-section">
+
+    <div class="document-card">
+        <h2>📄 Document Expiry Reminder</h2>
+
+        <div class="doc-form">
+            <input type="text" id="docName" placeholder="Document Name (e.g., Aadhaar)">
+            <input type="date" id="expiryDate">
+            <button onclick="addDocument()">Add Document</button>
+        </div>
+
+        <div class="doc-list" id="docList"></div>
+
+    </div>
+    
+</section>
+
+
+
+<!-- Scheme Cards -->
+<section class="schemes">
+    <h2>Recommended For You</h2>
+    <div class="scheme-container" id="schemeContainer"></div>
+</section>
+
+
+<script src="dashboard.js"></script>
+</body>
+</html>

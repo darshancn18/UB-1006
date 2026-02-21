@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECMRCE Login</title>
+<link rel="stylesheet" href="landreg.css">
+</head>
+<body>
+
+<div class="background">
+
+    <div class="login-card">
+    <h2>Login to Your Account</h2>
+    <p id="totalCount" style="font-weight:bold; margin-bottom:10px;"></p>
+    <p id="timeSlotDisplay" class="slot-box"></p>
+
+
+
+    <form action="fetch.php" method="POST">
+
+    <div class="input-group">
+        <label>Aadhaar Card Number</label>
+        <input type="text" name="aadhaar" placeholder="Enter Aadhaar Number" maxlength="12" required>
+    </div>
+
+    <div class="input-group">
+        <label>Reason for Registration</label>
+        <textarea name="reason" placeholder="Type your reason..." required></textarea>
+    </div>
+
+    <div class="input-group">
+        <label>Enter Name:</label>
+        <input type="text" name="name" required>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit</button>
+
+</form>
+
+
+</div>
+
+
+</div>
+
+<!-- POPUP -->
+<!-- POPUP -->
+<!-- POPUP -->
+<div class="popup-overlay" id="popup">
+    <div class="popup-box">
+        <h3>Select Your District</h3>
+
+        <select id="districtSelect" onchange="loadOffices()">
+            <option value="">-- Select District --</option>
+        </select>
+
+        <select id="officeSelect">
+            <option value="">-- Select Office --</option>
+        </select>
+
+        <button type="button" class="close-btn" onclick="saveData()">Confirm</button>
+
+    </div>
+</div>
+
+
+
+<script src="landreg.js?v=3"></script>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#FF9933,#FFFFFF,#138808);
+    overflow:hidden;
+}
+
+/* Animated Background Circles */
+.bg-animation span{
+    position:absolute;
+    border-radius:50%;
+    animation: float 8s infinite ease-in-out;
+    opacity:0.2;
+}
+
+.bg-animation span:nth-child(1){
+    width:300px;
+    height:300px;
+    background:#FF9933;
+    top:10%;
+    left:10%;
+}
+
+.bg-animation span:nth-child(2){
+    width:250px;
+    height:250px;
+    background:#138808;
+    bottom:15%;
+    right:15%;
+}
+
+.bg-animation span:nth-child(3){
+    width:200px;
+    height:200px;
+    background:#000080;
+    top:50%;
+    left:60%;
+}
+
+@keyframes float{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-30px); }
+}
+
+/* Wrapper */
+.profile-wrapper{
+    perspective:1000px;
+    
+}
+
+/* 3D Card */
+.profile-card{
+    width:420px;
+    padding:40px;
+    background:rgba(255, 255, 255, 0);
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.3);
+    backdrop-filter:blur(15px);
+    transform-style:preserve-3d;
+    transition:0.5s;
+    animation: slideUp 1s ease;
+}
+
+.profile-card:hover{
+    transform: rotateY(5deg) rotateX(5deg);
+}
+
+@keyframes slideUp{
+    from{opacity:0; transform:translateY(50px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.profile-card h2{
+    text-align:center;
+    color:#000080;
+}
+
+.profile-card p{
+    text-align:center;
+    margin-bottom:25px;
+    font-size:14px;
+    color:#333;
+}
+
+/* Floating Input */
+.input-group{
+    position:relative;
+    margin:20px 0;
+}
+
+.input-group input,
+.input-group select{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-bottom:2px solid #999;
+    background:transparent;
+    outline:none;
+    font-size:14px;
+}
+
+.input-group label{
+    position:absolute;
+    top:12px;
+    left:0;
+    color:#666;
+    pointer-events:none;
+    transition:0.3s;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label,
+.input-group select:focus ~ label,
+.input-group select:valid ~ label{
+    top:-10px;
+    font-size:12px;
+    color:#FF9933;
+}
+
+/* Button */
+.submit-btn{
+    width:100%;
+    padding:14px;
+    margin-top:20px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(145deg,#FF9933,#138808);
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.4s;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.submit-btn:hover{
+    transform:translateY(-5px) scale(1.05);
+}

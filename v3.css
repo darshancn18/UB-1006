@@ -1,0 +1,300 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #FF9933, #FFFFFF, #138808);
+    color: #afafc900;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Background Floating Animation */
+.bg-animation {
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,153,51,0.3), transparent 40%),
+                radial-gradient(circle, rgba(19,136,8,0.3), transparent 40%);
+    animation: moveBg 20s infinite linear;
+    z-index: -1;
+    background-image: url(air.jpg);
+}
+
+@keyframes moveBg {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-200px,-200px); }
+    100% { transform: translate(0,0); }
+}
+
+/* Header */
+.gov-header {
+    background: #4c4cbe0f;
+    color: white;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    
+}
+.logo-area
+{
+    color: rgba(255, 228, 196, 0.763);
+}
+
+/* Hero */
+.hero {
+    padding: 50px 20px;
+}
+
+.hero-title {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Buttons */
+button {
+    margin: 10px;
+    padding: 14px 25px;
+    border: none;
+    background: linear-gradient(0deg, #043054ce, #2b20be5b);
+    color: rgb(120, 163, 212);
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.075);
+}
+
+/* Glass Cards */
+.glass-card {
+    background: rgba(151, 150, 150, 0.098);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: rotateY(5deg) rotateX(5deg);
+}
+
+/* Input */
+input {
+    padding: 12px;
+    width: 280px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px;
+    font-size: 15px;
+    box-shadow: inset 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Card Layout */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Dashboard */
+.dashboard {
+    margin: 30px auto;
+    width: 80%;
+}
+
+/* Footer */
+.gov-footer {
+    background: #000080;
+    color: white;
+    padding: 15px;
+    margin-top: 30px;
+}
+#qrCode {
+    display: inline-block;
+    padding: 15px;
+    background: white;
+    border: 3px solid #000080;
+    border-radius: 10px;
+}
+#qrCodeSchool {
+    display: inline-block;
+    padding: 15px;
+    background: white;
+    border: 3px solid #000080;
+    border-radius: 10px;
+}
+#qrCodeScholarship {
+    display: inline-block;
+    padding: 15px;
+    background: white;
+    border: 3px solid #000080;
+    border-radius: 10px;
+}
+
+/* Smooth Global Animation */
+* {
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced Glass Card */
+.glass-card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px;
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.2),
+        inset 0 0 15px rgba(255,255,255,0.2);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.2s ease-out, box-shadow 0.3s ease;
+}
+
+/* Floating Effect */
+.glass-card {
+    animation: floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+    0%,100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Glow Button Effect */
+button {
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+    top: -50%;
+    left: -50%;
+    transform: rotate(25deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) rotate(25deg); }
+    100% { transform: translateX(100%) rotate(25deg); }
+}
+
+/* Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1s ease;
+}
+/* WhatsApp Input Box */
+.whatsapp-input-box {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* WhatsApp Icon */
+.whatsapp-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 22px;
+    color: #25D366;
+    animation: pulseWhatsApp 2s infinite;
+    z-index: 2;
+}
+
+.whatsapp-input-box input {
+    padding-left: 45px;
+}
+
+@keyframes pulseWhatsApp {
+    0% {
+        transform: scale(1);
+        text-shadow: 0 0 5px #25D366;
+    }
+    50% {
+        transform: scale(1.2);
+        text-shadow: 0 0 20px #25D366;
+    }
+    100% {
+        transform: scale(1);
+        text-shadow: 0 0 5px #25D366;
+    }
+}
+
+.whatsapp-input-box:hover .whatsapp-icon {
+    transform: rotateY(360deg);
+    transition: 0.8s ease;
+}
+
+/* ============================= */
+/* ENLARGED WHATSAPP + DOB CARDS */
+/* ============================= */
+
+.phone-section,
+.birth-section {
+    width: 420px;              /* Bigger card width */
+    min-height: 320px;
+    padding: 40px;
+    font-size: 18px;
+}
+
+/* Bigger Headings */
+.phone-section h2,
+.birth-section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Bigger Input Fields */
+.phone-section input,
+.birth-section input {
+    width: 320px;
+    padding: 16px;
+    font-size: 17px;
+    border-radius: 14px;
+}
+
+/* Bigger Button */
+.phone-section button,
+.birth-section button {
+    padding: 16px 30px;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+/* Make card container spacing better */
+.card-container {
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* Stronger 3D Effect */
+.phone-section:hover,
+.birth-section:hover {
+    transform: scale(1.05) rotateY(8deg);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+}

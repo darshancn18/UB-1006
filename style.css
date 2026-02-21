@@ -1,0 +1,439 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #c39d4a56;
+}
+
+/* Center alignment */
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;              /* space between cards */
+    flex-wrap: wrap;        /* allows multiple rows */
+}
+
+/* Icon Card */
+.icon-card{
+    position: relative;
+    width: 200px;
+    height: 120px;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.icon-card:hover{
+    transform: scale(1.1);
+}
+
+/* Showcase Overlay */
+.showcase{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 400px;
+    padding: 30px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    transition: 0.5s ease;
+    opacity: 0;
+    z-index: 999;
+}
+
+
+
+/* Show in center when hovering */
+.icon-card:hover .showcase
+{
+    transform: translate(-50%,-50%) scale(1);
+    opacity: 1;
+}
+
+/* Content styling */
+.showcase-content h2{
+    margin-top: 0;
+}
+
+.showcase-content p{
+    line-height: 2.5;
+}
+.head{
+    color: #2b50e2;
+}
+
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:#41c50900;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    position:fixed;
+    width:100%;
+    z-index:1000;
+}
+
+header nav a{
+    margin:0 15px;
+    text-decoration:none;
+    color:#3333330c;
+    font-weight:500;
+    transition:0.3s;
+}
+
+header nav a:hover{
+    color:#ff9933;
+    transform:translateY(-3px);
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    animation: slideDown 1.0s ease-out;
+}
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fade 9s infinite;
+}
+
+/* Delay each image */
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 3s; }
+.slide:nth-child(3) { animation-delay: 6s; }
+
+@keyframes fade {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  30%  { opacity: 1; }
+  40%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+
+@keyframes slideDown{
+    from{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 80px;              /* move from left side */
+    transform: translateY(-50%);   /* only vertical center */
+    text-align: left;        /* align text left */
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    max-width: 600px;
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.5s;
+    color: #022f0bd1;
+}
+
+.hero-text p {
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 1s;
+    font-size: 20px;
+    color: #022f09;
+}
+
+
+@keyframes fadeUp{
+    from{
+        transform:translateY(50px);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+/* BUTTONS */
+    .hero-buttons {
+    opacity: 0;
+    animation: fadeOnly 2s ease forwards;
+    animation-delay: 1s;
+
+
+@keyframes fadeOnly {
+    to {
+        opacity: 1;
+    }
+}
+
+}
+.btn-primary, .btn-secondary{
+    padding:12px 25px;
+    margin:10px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.4s;
+    transform-style:preserve-3d;
+}
+
+.btn-primary{
+    background:#ff9933;
+    color:#fff;
+}
+
+.btn-secondary{
+    background:#138808;
+    color:#fff;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover{
+    transform:rotateX(15deg) rotateY(10deg) scale(1.1);
+    box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* CARDS SECTION */
+.cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 80px;
+    padding: 80px 100px;
+    justify-items: center;
+    background-color: #5b35040c;
+}
+
+.card{
+    width: 60px;
+    height: 150px;
+    background: #e9e9e948;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 600;
+    text-decoration: underline;
+    color: rgba(2, 2, 38, 0.61);
+    box-shadow: 0 20px 30px rgba(17, 10, 10, 0.2);
+    transition: all 0.4s ease;
+}
+
+.card:hover{
+    transform: translateY(-12px);
+    box-shadow: 0 30px 40px rgba(0,0,0,0.25);
+}
+@media (max-width: 1100px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ABOUT SECTION */
+.about{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:80px 60px;
+    gap:40px;
+}
+
+.about-content{
+    flex:1;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.3);
+    transition:0.5s;
+}
+
+.about-image img:hover{
+    transform:scale(1.05) rotateY(5deg);
+}
+
+/* FOOTER */
+footer{
+    background:#333;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;   /* shows full image */
+}
+/* ===== 3D MAGIC AI BUTTON ===== */
+.logo {
+   
+    padding:20px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #300404;
+    background: linear-gradient(135deg, #db9317ee, #d0d1c9ab, #168705db);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+    box-shadow:
+        0 0 20px rgba(11, 160, 43, 0.6),
+        0 0 40px rgba(192, 140, 7, 0.429),
+        inset 0 0 15px rgba(255,255,255,0.3);
+}
+
+/* 3D Depth Effect */
+.logo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), transparent);
+    transform: translateZ(-10px);
+}
+
+/* Magical Shine Moving */
+.logo::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -50%;
+    width: 200%;
+    height: 300%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+    transform: rotate(25deg);
+    transition: 0.6s;
+}
+
+/* Hover Magic Movement */
+.logo:hover {
+    transform: translateY(-8px) rotateX(15deg) rotateY(-15deg);
+    box-shadow:
+        0 0 30px rgba(28, 51, 1, 0.936),
+        0 0 60px rgba(66, 40, 1, 0.751),
+        0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Shine animation on hover */
+.logo::after {
+    top: -20%;
+    left: -20%;
+}
+
+/* Click Press Effect */
+.logo:active {
+    transform: translateY(2px) scale(0.95);
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    
+    padding: 10px;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #0c2e02ea;
+    letter-spacing: 1px;
+    transition: 0.4s ease;
+}
+
+/* Glow Effect */
+.navbar a:hover {
+    color: #0924d6;
+    text-shadow:
+        0 0 5px #6763a0,
+        0 0 10px #f1e60c,
+        0 0 20px #77bd6bcc;
+    transform: translateY(-4px);
+}
+
+/* Magical Sliding Line */
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #ff8c00, #d8d9dbba, #05c725);
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+/* Animate Line on Hover */
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* Soft Floating Animation */
+.navbar a:hover {
+    animation: float 0.6s ease forwards;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(-4px); }
+}
+
+
+
